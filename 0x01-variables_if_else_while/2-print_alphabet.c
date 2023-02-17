@@ -1,7 +1,10 @@
 #include <stdio.h>
  /**
   * main - Prints the alphabet in lowercase
-  * Return: Alwas (0)
+  *
+  * Description: 'the programs description'
+  *
+  * Return: Always (0)
   */
 
 int main(void)
