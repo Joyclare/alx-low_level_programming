@@ -1,8 +1,6 @@
 #include <stdio.h>
  /**
-  * main - Prints the alphabet in lowercase
-  *
-  * Description: 'the programs description'
+  * main - Prints the alphabet in lowercase with putchar function
   *
   * Return: Always (0)
   */
