@@ -1,10 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
  /**
-  * main - a program that prints the alphabet in lowercase with
-  * putchar function
-  *
-  * Return: Always (0)
-  */
+ * main - start point
+ * Description: print a to z
+ *
+ * Return: 0
+ */
 
 int main(void)
 {
