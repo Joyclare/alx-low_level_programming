@@ -11,18 +11,31 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int j;
-	unsigned int decimal_value = 0;
+	unsigned int j;
+	int str_len, bit_value;
 
-	if (b == 0)
+	/* check if input string is NULL*/
+	if (!b)
 		return (0);
 
-	for (j = 0; b[j];)
-		j++;
+	j = 0;
+	/* Initialize final result to 0 */
+
+	for (str_len = 0; b[str_len] != '\0')
+		str_len++;
+
+	/* iterate through input string to determine its length*/
+
+	for (str_len--, bit_value = 1; str_len >= 0; str_len--, bit_value *= 2)
 	{
-		if (b[j] < '0' || b[j] > '1')
+		if (b[str_len] != '0' && b[len] != '1')
+		{
 			return (0);
-		decimal_value = 2 * decimal_value + (b[j] - '0');
+		}
+		if (b[str_len] & 1)
+		{
+			j += bit_value;
+		}
 	}
-	return (decimal_value);
+	return (j);
 }
