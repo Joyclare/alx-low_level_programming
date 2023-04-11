@@ -7,20 +7,15 @@
 
 void print_binary(unsigned long int n)
 {
-	int a, count = 0;
-	unsigned long int cur;
-
-	for (a = 63; a >= 0; a--)
+	if (n >> 0)
 	{
-		cur = n >> a;
-		if (cur & 1)
-		{
-			_putchar('1'
-					coun++;
-					}
-					else if (count)
-					_putchar('0');
-					}
-					if (!count)
-					_putchar('0');
-					}
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
+	}
+
+	else
+	{
+		_putchar('0');
+	}
+}
