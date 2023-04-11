@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * create_file - creates a file
@@ -22,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 
 	}
 
-	j = open(file_name, 0_CREAT | O_RDWR | O_TRUNC, 0600);
+	j = open(filename, 0_CREAT | O_RDWR | O_TRUNC, 0600);
 	m = write(j, text_content, length);
 
 	if (j == -1 || m == -1)

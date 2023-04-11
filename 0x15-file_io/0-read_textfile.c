@@ -12,20 +12,19 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buf;
-	ssize_t fd;
-	ssize_t written;
-	ssize_t read;
+	char *buffer;
+	ssize_t file_descriptor;
+	ssize_t j;
+	ssize_t k;
 
 	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	if (file_descriptor == -1)
 		return (0);
-
-	buf = malloc(sizeof(char) * letters);
-	read = read(fd, buf, letters);
-	written = write(STDOUT_FILENO, buf, read);
+	buffer = malloc(sizeof(char) * letters);
+	k = read(file_descriptor, buffer, letters);
+	j = write(STDOUT_FILENO, buffer, k);
 
 	free(buffer);
-	close(fd);
-	return (written);
+	close(file_descriptor);
+	return (j);
 }
