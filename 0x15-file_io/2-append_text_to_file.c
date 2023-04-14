@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stddef.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
  * append_text_to_file - appends text
@@ -13,21 +15,27 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int p, x, length = 0;
+	int j, k, l;
 
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
 
-	if (text_content != NULL)
-	{
-		for (length = 0; text_content[length];)
-			length++;
-	}
-	p = open(filename, 0_WRONLY | 0_APPEND);
-	x = write(p, text_content, length);
+	j = open(filename, O_WRONLY | O_APPEND);
 
-	if (p == -1 || x == -1)
+	if (j == -1)
+		return (-1);
+
+	if (text_content)
+	{
+		for (k = 0; text_content[k]; k++)
+			;
+
+		l = write(j, text_content, k);
+
+		if (l == -1)
 			return (-1);
-	close(p);
+	}
+
+	close(j);
 	return (1);
 }
