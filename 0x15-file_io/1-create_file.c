@@ -1,11 +1,9 @@
 #include "main.h"
-#include <fcntl.h>
-#include <unistd.h>
 
 /**
  * create_file - creates a file
- * @filename: file to create
- * @text_content: content to write to file
+ * @filename: Pointer to the file to create
+ * @text_content: Pointer to a string to write
  * Return: 1 on success
  * -1 on failure
  */
